@@ -6,10 +6,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - 9999:8000
--
-  loguru:
+  auth:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - ./logs:/fastapi_app/logs
+    ports:
+      - 8081:8081
