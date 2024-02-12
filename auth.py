@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from fastapi import HTTPException, status
 
-SECRET_KEY = "3c19620880afb6abbca093abe56e3820a45c0dc8c796e58420d6a34f4e2fba31"
+SECRET_KEY = "1"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 15
 
