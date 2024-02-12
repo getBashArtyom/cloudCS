@@ -1,14 +1,18 @@
-version: 2.18.1
+version: '3'
 services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile_app
     ports:
-      - 9999:8000
-  auth:
+      - 8001:8001
+  gui:
     build:
       context: .
-      dockerfile: Dockerfile
-    ports:
-      - 8081:8081
+      dockerfile: Dockerfile_gui
+    environment:
+      - DISPLAY=:0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    depends_on:
+      - app
